@@ -226,7 +226,8 @@ PRODUCT_PACKAGES += \
     AndroidBlackThemeOverlay \
     DocumentsUIOverlay \
     NetworkStackOverlay \
-    ThemedIconsOverlay
+    ThemedIconsOverlay \
+    NavigationBarNoHintOverlay
 
 # Translations
 CUSTOM_LOCALES += \
