@@ -1,7 +1,7 @@
-# Inherit mobile full common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_mobile_full.mk)
+# Inherit mobile full common StagOS stuff
+$(call inherit-product, vendor/stag/config/common_mobile_full.mk)
 
-# Inherit tablet common Lineage stuff
-$(call inherit-product, vendor/lineage/config/tablet.mk)
+# Inherit tablet common StagOS stuff
+$(call inherit-product, vendor/stag/config/tablet.mk)
 
-$(call inherit-product, vendor/lineage/config/wifionly.mk)
+$(call inherit-product, vendor/stag/config/wifionly.mk)
