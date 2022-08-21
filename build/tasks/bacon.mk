@@ -14,14 +14,13 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# Lineage OTA update package
+# StagOS OTA update package
 
-LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/lineage-$(LINEAGE_VERSION).zip
-
-SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
+STAG_TARGET_PACKAGE := $(PRODUCT_OUT)/$(STAG_VERSION).zip
+MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 
 .PHONY: bacon
 bacon: $(DEFAULT_GOAL) $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(LINEAGE_TARGET_PACKAGE)
-	$(hide) $(SHA256) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).sha256sum
-	@echo "Package Complete: $(LINEAGE_TARGET_PACKAGE)" >&2
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(STAG_TARGET_PACKAGE)
+	$(hide) $(MD5) $(STAG_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(STAG_TARGET_PACKAGE).md5sum
+	@echo "Package Complete: $(STAG_TARGET_PACKAGE)" >&2
