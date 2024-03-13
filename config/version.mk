@@ -12,7 +12,7 @@ STAG_VERSION := StagOS_$(STAG_BUILD)-$(STAG_PLATFORM_VERSION)-$(STAG_BUILD_DATE)
 STAG_VERSION_PROP := fourteen
 
 # Signing
-ifeq (user,$(TARGET_BUILD_VARIANT))
+ifneq (eng,$(TARGET_BUILD_VARIANT))
 ifneq (,$(wildcard vendor/stag/signing/keys/releasekey.pk8))
 PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/stag/signing/keys/releasekey
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.oem_unlock_supported=1
