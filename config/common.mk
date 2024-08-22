@@ -185,6 +185,15 @@ CUSTOM_LOCALES += \
     cy_GB \
     fur_IT
 
+# Bootanimation
+ifeq ($(TARGET_SCREEN_RES), 720)
+	PRODUCT_COPY_FILES += vendor/stag/prebuilt/common/bootanimation/720p.zip:system/media/bootanimation.zip
+else ifeq ($(TARGET_SCREEN_RES), 1080)
+	PRODUCT_COPY_FILES += vendor/stag/prebuilt/common/bootanimation/1080p.zip:system/media/bootanimation.zip
+else
+	PRODUCT_COPY_FILES += vendor/stag/prebuilt/common/bootanimation/1080p.zip:system/media/bootanimation.zip
+endif
+
 include vendor/stag/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
